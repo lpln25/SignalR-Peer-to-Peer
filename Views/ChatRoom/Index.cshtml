@@ -1,0 +1,57 @@
+﻿@model WebAppSaba.Models.Entities.User
+@{
+    ViewData["Title"] = "چت روم";
+}
+
+<h5> کاربر: @Model.Nickname</h5>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <ul id="chatMessage" class="card-body">
+                            @*Messages*@
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <form id="answerForm" class="mt-2 row">
+                        <input id="answerText" type="text" placeholder="نوشتن پیام" class="col-10" autocomplete="off" />
+                        <button type="submit" class="btn btn-success col-2">✔️</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <span>کاربران آنلاین</span>
+            <div id="online-users" class="list-group">
+                <ul>
+                </ul>
+                @*Online Users*@
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <span>تاریخچه چت</span>
+            <div id="chat-history-users" class="list-group">
+                <ul>
+                    @*History Users*@
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+@section Scripts{
+
+    <script src="~/js/ChatroomSignalRService.js"></script>
+}
+
+
